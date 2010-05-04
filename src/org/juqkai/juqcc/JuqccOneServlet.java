@@ -5,6 +5,9 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
+import org.juqkai.juqcc.dao.PhotoDao;
+import org.juqkai.juqcc.domain.Photo;
+
 @SuppressWarnings("serial")
 public class JuqccOneServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)

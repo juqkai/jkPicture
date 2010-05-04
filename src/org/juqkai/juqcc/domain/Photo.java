@@ -1,4 +1,4 @@
-package org.juqkai.juqcc;
+package org.juqkai.juqcc.domain;
 
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.IdentityType;
@@ -18,7 +18,6 @@ public class Photo {
     @Persistent
 	private String name;
     
-    
 	public Long getId() {
 		return id;
 	}
@@ -37,6 +36,4 @@ public class Photo {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	
 }

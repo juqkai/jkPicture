@@ -18,7 +18,6 @@ import javax.servlet.jsp.tagext.Tag;
  */
 public class AlanXUploadHeadTag implements Tag{
 	private static final long serialVersionUID = 1L;
-	private static final String ALANX_UPLOAD_FOLDER = "AlanX_Upload_Folder";
 	public  static final String ALANX_UPLOAD_SERVLET = "JuqccUploadServlet";
 	
     private PageContext pageContext;
@@ -72,7 +71,8 @@ public class AlanXUploadHeadTag implements Tag{
     	sb.append("flashvars.maxAllFileSize="+(maxAllFileSize <=0 || maxAllFileSize >1048576000?1048576000:maxAllFileSize)+"1048576000;");//允许上传的�?文件�?���?byte);(100M)
     	sb.append("flashvars.waitForProgress = \""+waitForProgress+"\";");//上一个文件上传完毕后，是否马上开始上传下�?��文件(默认false)，还是等待业务�?辑处理完之后（比如可能需要解析文件等业务过程），再开始下�?��文件的上�?true)
     	sb.append("flashvars.errorContinue = \""+errorContinue+"\";");//上传某一个文件出错，是否继续上传其他文件默认为true
-    	sb.append("flashvars.showLogoTxt = \""+showLogoTxt+"\";");//显示AlanX的logo及链接，默认为显示，当鼠标在组件右边悬停时，logo会显示，点击可以看到官方的帮助文�?�?    	sb.append("var params = {};");  
+    	sb.append("flashvars.showLogoTxt = \""+showLogoTxt+"\";");//显示AlanX的logo及链接，默认为显示，当鼠标在组件右边悬停时，logo会显示，点击可以看到官方的帮助文
+    	sb.append("var params = {};");
     	sb.append("var attributes = {};");  
     	sb.append("swfobject.embedSWF(\"AlanX/AlanX.swf\", \"AlanX\", \"500\", \"40\", \"9.0.0\",\"AlanX/expressInstall.swf\",flashvars, params, attributes);");  
     	

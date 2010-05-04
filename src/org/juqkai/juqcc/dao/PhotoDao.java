@@ -1,9 +1,11 @@
-package org.juqkai.juqcc;
+package org.juqkai.juqcc.dao;
 
 import java.util.List;
 
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
+
+import org.juqkai.juqcc.domain.Photo;
 
 public class PhotoDao {
     private static PhotoDao _instance = null;

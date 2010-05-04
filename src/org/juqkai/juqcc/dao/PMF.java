@@ -1,4 +1,4 @@
-package org.juqkai.juqcc;
+package org.juqkai.juqcc.dao;
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManagerFactory;
 

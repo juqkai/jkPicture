@@ -12,6 +12,14 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>jquccOne</servlet-name>
 		<servlet-class>org.juqkai.juqcc.JuqccOneServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>JuqccUploadServlet</servlet-name>
+		<servlet-class>org.juqkai.juqcc.JuqccUploadServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>JuqccUploadServlet</servlet-name>
+		<url-pattern>/JuqccUploadServlet</url-pattern>
+	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>jquccOne</servlet-name>
 		<url-pattern>/jquccOne</url-pattern>
