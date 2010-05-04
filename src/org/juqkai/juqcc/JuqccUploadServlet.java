@@ -17,10 +17,12 @@ import com.google.appengine.api.datastore.Blob;
 
 @SuppressWarnings("serial")
 public class JuqccUploadServlet extends HttpServlet {
-	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+	public void doGet(HttpServletRequest req, HttpServletResponse resp)
+			throws IOException {
 		try {
 			uploadPhoto(req);
-//			req.setAttribute("Pid", uploadPhoto(new ServletFileUpload().getItemIterator(req)));
+			// req.setAttribute("Pid", uploadPhoto(new
+			// ServletFileUpload().getItemIterator(req)));
 			req.getRequestDispatcher("photo.jsp").forward(req, resp);
 		} catch (ServletException e) {
 			e.printStackTrace();
@@ -28,30 +30,24 @@ public class JuqccUploadServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
-	
-	private void uploadPhoto(HttpServletRequest req) throws FileUploadException, IOException{
+
+	private void uploadPhoto(HttpServletRequest req) throws FileUploadException, IOException {
 		FileItemIterator iterator = new ServletFileUpload().getItemIterator(req);
-		
 		while (iterator.hasNext()) {
 			FileItemStream item = iterator.next();
-			Blob bImg = new Blob(IOUtils.toByteArray(item.openStream()));
-			Photo photo = new Photo();
-			photo.setPhoto(bImg);
-			photo.setName(parseName(item.getName()));
-			
-			System.out.println("~~2~~");
-			System.out.println(item.getFieldName());
-			System.out.println("~~3~~");
-			System.out.println(item.getName());
-			System.out.println("~~4~~");
-			
-//			PhotoDao.getInstance().insertPhoto(photo);
+			if (!item.isFormField()) {
+				Blob bImg = new Blob(IOUtils.toByteArray(item.openStream()));
+				Photo photo = new Photo();
+				photo.setPhoto(bImg);
+				photo.setName(parseName(item.getName()));
+				PhotoDao.getInstance().insertPhoto(photo);
+			}
 		}
 	}
 
 	private String parseName(String filePath) {
 		String fp = filePath.replaceAll("/", "\\");
-		if(fp.lastIndexOf("\\") >= 0){
+		if (fp.lastIndexOf("\\") >= 0) {
 			return fp.substring(fp.lastIndexOf("\\"));
 		}
 		return fp;

@@ -5,8 +5,11 @@ import javax.jdo.annotations.IdentityType;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
-
 import com.google.appengine.api.datastore.Blob;
+import com.google.appengine.api.images.Image;
+import com.google.appengine.api.images.ImagesService;
+import com.google.appengine.api.images.ImagesServiceFactory;
+import com.google.appengine.api.images.Transform;
 
 @PersistenceCapable(identityType = IdentityType.APPLICATION)
 public class Photo {
@@ -35,5 +38,18 @@ public class Photo {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	/**
+	 * 有问题
+	 * @return
+	 */
+	@Deprecated
+	public byte[] parsePhoto(){
+		ImagesService is = ImagesServiceFactory.getImagesService();
+		Image image = ImagesServiceFactory.makeImage(photo.getBytes());
+		Transform resize = ImagesServiceFactory.makeResize(200, 200);
+		Image im = is.applyTransform(resize, image);
+		return im.getImageData();
 	}
 }
