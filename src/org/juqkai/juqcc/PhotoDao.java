@@ -16,14 +16,19 @@ public class PhotoDao {
     }
  
     //
-    public String insertPhoto(Photo photo) {
+    public Long insertPhoto(Photo photo) {
         PersistenceManager pm = PMF.get().getPersistenceManager();
         try {
             pm.makePersistent(photo);
         } finally {
             pm.close();
         }
-        return photo.getId().toString();
+        return photo.getId();
+    }
+    
+    public List<Photo> listAll(){
+    	PersistenceManager pm = PMF.get().getPersistenceManager();
+    	return (List<Photo>) pm.newQuery(Photo.class).execute();
     }
  
     public Photo getById(Long id) {
@@ -31,6 +36,7 @@ public class PhotoDao {
         Query query = pm.newQuery(Photo.class);
         query.setFilter("id == idParam");
         query.declareParameters("Long idParam");
+        
         List<Photo> photo = null;
         try {
             photo = (List<Photo>) query.execute(id);
@@ -43,4 +49,5 @@ public class PhotoDao {
             query.closeAll();
         }
     }
+    
 }

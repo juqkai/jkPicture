@@ -4,10 +4,15 @@
   <short-name>ax</short-name>
   <uri>/WEB-INF/tlds/AlanXUpload</uri>
   <listener></listener>
-  
   <tag>
     <description>AlanXUpload 批量上传组件</description>
     <name>head</name>
+    <tag-class>cn.alanx.upload.tag.AlanXUploadBodyTag</tag-class>
+    <body-content>empty</body-content>
+  </tag>
+  <tag>
+    <description>AlanXUpload 批量上传组件</description>
+    <name>body</name>
     <tag-class>cn.alanx.upload.tag.AlanXUploadHeadTag</tag-class>
     <body-content>empty</body-content>
     <attribute>
@@ -25,7 +30,7 @@
       <required>false</required>
       <rtexprvalue>true</rtexprvalue>
       <type>java.lang.String</type>
-      <description>允许扩展名，如"*.xls;*.doc"</description>
+      <description>允许扩展名，如".xls;.doc"</description>
     </attribute>
     <attribute>
       <name>extensionDisp</name>
@@ -99,11 +104,5 @@
       <type>java.lang.String</type>
       <description>指定上传文件的路径</description>
     </attribute>
-  </tag>
-  <tag>
-    <description>AlanXUpload 批量上传组件</description>
-    <name>body</name>
-    <tag-class>cn.alanx.upload.tag.AlanXUploadBodyTag</tag-class>
-    <body-content>empty</body-content>
   </tag>
 </taglib>

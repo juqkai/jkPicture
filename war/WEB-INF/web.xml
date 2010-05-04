@@ -8,6 +8,14 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>Juqcc</servlet-name>
 		<servlet-class>org.juqkai.juqcc.JuqccServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>jquccOne</servlet-name>
+		<servlet-class>org.juqkai.juqcc.JuqccOneServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>jquccOne</servlet-name>
+		<url-pattern>/jquccOne</url-pattern>
+	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>Juqcc</servlet-name>
 		<url-pattern>/juqcc</url-pattern>
