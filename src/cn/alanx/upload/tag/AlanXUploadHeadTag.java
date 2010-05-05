@@ -18,7 +18,7 @@ import javax.servlet.jsp.tagext.Tag;
  */
 public class AlanXUploadHeadTag implements Tag{
 	private static final long serialVersionUID = 1L;
-	public  static final String ALANX_UPLOAD_SERVLET = "JuqccUploadServlet";
+	public  static final String ALANX_UPLOAD_SERVLET = "JuqccUpload";
 	
     private PageContext pageContext;
     private Tag parent;

@@ -5,28 +5,37 @@ xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<servlet>
-		<servlet-name>Juqcc</servlet-name>
-		<servlet-class>org.juqkai.juqcc.JuqccServlet</servlet-class>
+		<servlet-name>juqccList</servlet-name>
+		<servlet-class>org.juqkai.juqcc.JuqccListServlet</servlet-class>
 	</servlet>
 	<servlet>
 		<servlet-name>jquccOne</servlet-name>
 		<servlet-class>org.juqkai.juqcc.JuqccOneServlet</servlet-class>
 	</servlet>
 	<servlet>
-		<servlet-name>JuqccUploadServlet</servlet-name>
+		<servlet-name>juqccUpload</servlet-name>
 		<servlet-class>org.juqkai.juqcc.JuqccUploadServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>juqccDelete</servlet-name>
+		<servlet-class>org.juqkai.juqcc.JuqccDeleteServlet</servlet-class>
+	</servlet>
+	
 	<servlet-mapping>
-		<servlet-name>JuqccUploadServlet</servlet-name>
-		<url-pattern>/JuqccUploadServlet</url-pattern>
+		<servlet-name>juqccDelete</servlet-name>
+		<url-pattern>/juqccDelete</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>juqccUpload</servlet-name>
+		<url-pattern>/juqccUpload</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>jquccOne</servlet-name>
 		<url-pattern>/jquccOne</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
-		<servlet-name>Juqcc</servlet-name>
-		<url-pattern>/juqcc</url-pattern>
+		<servlet-name>juqccList</servlet-name>
+		<url-pattern>/juqccList</url-pattern>
 	</servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
