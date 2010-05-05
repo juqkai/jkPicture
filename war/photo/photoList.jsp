@@ -9,42 +9,56 @@
 <title>bb</title>
 <style type="text/css">
 	#photos{
-		border: 1px solid blue;
+		border: 1px solid #778541;
 	}
-	div {
-		display: block;
+	
+	.photoItem{
+		display: inline;
+		border: 0px solid red;
+		width: 130px;
+		height: 130px;
+		margin:5px;
 	}
-	a {
-		border: 1px solid #333;
-	}
-	a div{
+	.photoItem div{
+		display: inline;
+		border: 0px solid #478965;
 		width: 120px;
-		border: 1px solid red;
+	}
+	#page{
+		width: 22px;
 	}
 	
 </style>
 </head>
 
 <body>
+<a href="#">上传</a>
 
 <div id="photos">
 <%
 List<Photo> photos = (List<Photo>)request.getAttribute("photos");
 for(Photo photo : photos){
 	%>
-	<a href="/jquccOne?id=<%=photo.getId()%>" class="photoItem">
-		<div>
-		<img width="100" height="100" src='/jquccOne?id=<%=photo.getId()%>'>
-		<span class="target"><%=photo.getName()%></span>
-		</div>
-		<!-- 
-	<img width="100" height="100" src='/jquccOne?id=<%=photo.getId()%>'>
-	<%=photo.getName()%>
-	 -->
+	<div class="photoItem">
+	<a href="/jquccOne?id=<%=photo.getId()%>" class="photoItem" target="<%=photo.getName()%>" >
+		<img width="100" height="100" src='/jquccOne?id=<%=photo.getId()%>'/>
 	</a>
+		
+	</div>
 	<%
 }
 %>
 </div>
+<div>
+	<form action="/juqcc">
+	<a href="/juqcc?page=1"><<</a>
+	<a href="/juqcc?page="><</a>
+	<a href="/juqcc?page=">></a>
+	<a href="/juqcc?page=">>></a>
+	<input name="page" id="page">
+	<input type="submit" value="GO"> 
+	</form>
+</div>
+
 </body>
 </html>
