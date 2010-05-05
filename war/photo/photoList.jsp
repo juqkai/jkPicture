@@ -64,7 +64,7 @@ img{
 <div id="photos">
 <%
 	List<Photo> photos = (List<Photo>) request.getAttribute("photos");
-	Page pa = (Page) request.getAttribute("page");
+	Page pa = (Page) request.getAttribute("pg");
 	for (Photo photo : photos) {
 %>
 <div class="photoItem">
@@ -79,10 +79,10 @@ img{
 <div class="clear"/>
 </div>
 <div>
-<form action="/juqccList"><a href="/juqccList?page=1"><<</a> <a
-	href="/juqccList?page=<%=pa.getPrevPage()%>"><</a> <%=pa.getCurrentPage()%>/<%=pa.getEndPage()%>
-<a href="/juqccList?page=<%=pa.getNextPage()%>">></a> <a
-	href="/juqccList?page=<%=pa.getEndPage()%>">>></a> <input name="page"
+<form action="/juqccList"><a href="/juqccList?pg=1"><<</a> <a
+	href="/juqccList?pg=<%=pa.getPrevPage()%>"><</a> <%=pa.getCurrentPage()%>/<%=pa.getEndPage()%>
+<a href="/juqccList?pg=<%=pa.getNextPage()%>">></a> <a
+	href="/juqccList?pg=<%=pa.getEndPage()%>">>></a> <input name="pg"
 	id="page"> <input type="submit" value="GO"></form>
 </div>
 
