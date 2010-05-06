@@ -19,6 +19,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+	<link rel="stylesheet" type="text/css" href="/script/css/index.css">
 	<style type="text/css">
 		*{
 		font-size: 12px;
@@ -32,6 +33,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
   	<a href="/juqccList">图片列表</a>
   	<ax:body/>
-    
+<div class="systemInfo">
+	<a href="systemInfo.jsp">更新信息</a>
+</div>
   </body>
 </html>

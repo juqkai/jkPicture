@@ -9,7 +9,8 @@
 <%@page import="org.juqkai.juqcc.util.PhotoUtil"%><html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>bb</title>
+<title>juqcc图片外链</title>
+<link rel="stylesheet" type="text/css" href="/script/css/index.css">
 <script type="text/javascript" src="/script/js/jquery-1.4.2.js"></script>
 <style type="text/css">
 #photos {
@@ -95,5 +96,8 @@ img{
 	id="page"> <input type="submit" value="GO"></form>
 </div>
 
+<div class="systemInfo">
+	<a href="systemInfo.jsp">更新信息</a>
+</div>
 </body>
 </html>
