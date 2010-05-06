@@ -17,6 +17,10 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-class>org.juqkai.juqcc.JuqccUploadServlet</servlet-class>
 	</servlet>
 	<servlet>
+		<servlet-name>juqccPreUpload</servlet-name>
+		<servlet-class>org.juqkai.juqcc.JuqccPreUploadServlet</servlet-class>
+	</servlet>
+	<servlet>
 		<servlet-name>juqccDelete</servlet-name>
 		<servlet-class>org.juqkai.juqcc.JuqccDeleteServlet</servlet-class>
 	</servlet>
@@ -29,6 +33,10 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<servlet-mapping>
 		<servlet-name>juqccUpload</servlet-name>
 		<url-pattern>/juqccUpload</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>juqccPreUpload</servlet-name>
+		<url-pattern>/juqccPreUpload</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>jquccOne</servlet-name>

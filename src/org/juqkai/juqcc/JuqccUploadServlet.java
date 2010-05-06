@@ -21,8 +21,6 @@ public class JuqccUploadServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
 		try {
-			PhotoUtil.login(req, resp);
-			
 			uploadPhoto(req);
 			req.getRequestDispatcher("photo.jsp").forward(req, resp);
 		} catch (ServletException e) {

@@ -49,14 +49,17 @@ img{
 }
 </style>
 
+
+
 <script type="text/javascript">
 	$(function(){
-		var message = "";
-		message = <%=request.getAttribute("message")%> + "";
-		if(message != null && message != ""){
-			alert(message);
+		<% 
+		String message = (String)request.getAttribute("message");
+		if(message != null){
+			out.println("alert('"+message+"')");
 		}
-		
+		%>
+				
 		$(".photoItem input").click(function(){
 			$(this).trigger("select");
 		});
@@ -65,7 +68,7 @@ img{
 </head>
 
 <body>
-<a href="/photo/upload.jsp">上传</a>
+<a href="/juqccPreUpload">上传</a>
 
 <div id="photos">
 <%

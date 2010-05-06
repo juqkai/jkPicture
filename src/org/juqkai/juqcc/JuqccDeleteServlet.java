@@ -14,7 +14,9 @@ import org.juqkai.juqcc.util.PhotoUtil;
 public class JuqccDeleteServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
-		PhotoUtil.login(req, resp);
+		if(!PhotoUtil.login(req, resp)){
+			return ;
+		}
 		
 		Long pa = 1l;
 		if (req.getParameter("page") != null) {

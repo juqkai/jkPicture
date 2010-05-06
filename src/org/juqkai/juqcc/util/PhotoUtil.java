@@ -27,11 +27,12 @@ public class PhotoUtil {
 		return path;
 	}
 	
-	public static void login(HttpServletRequest req, HttpServletResponse resp) throws IOException{
+	public static Boolean login(HttpServletRequest req, HttpServletResponse resp) throws IOException{
 		UserService us = UserServiceFactory.getUserService();
 		User user = us.getCurrentUser();
 		if(user == null){
 			resp.sendRedirect(us.createLoginURL(req.getRequestURI()));
+			return false;
 		}
 		if(!us.isUserAdmin()){
 			try {
@@ -40,6 +41,9 @@ public class PhotoUtil {
 			} catch (ServletException e1) {
 				e1.printStackTrace();
 			}
+			return false;
 		}
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		return true;
 	}
 }
