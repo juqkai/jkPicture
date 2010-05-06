@@ -97,7 +97,8 @@ img{
 </div>
 
 <div class="systemInfo">
-	<a href="systemInfo.jsp">更新信息</a>
+	版权所有:zhaoweiyicc,juqkai,zkgale&nbsp;&nbsp;
+	<a href="/photo/systemInfo.jsp">更新信息</a>
 </div>
 </body>
 </html>
