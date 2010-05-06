@@ -51,6 +51,12 @@ img{
 
 <script type="text/javascript">
 	$(function(){
+		var message = "";
+		message = <%=request.getAttribute("message")%> + "";
+		if(message != null && message != ""){
+			alert(message);
+		}
+		
 		$(".photoItem input").click(function(){
 			$(this).trigger("select");
 		});
