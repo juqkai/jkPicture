@@ -16,7 +16,7 @@ public class JuqccPreUploadServlet extends HttpServlet {
 		}
 		
 		try {
-			req.getRequestDispatcher("/photo/photoList.jsp").forward(req, resp);
+			req.getRequestDispatcher("/photo/upload.jsp").forward(req, resp);
 		} catch (ServletException e) {
 			e.printStackTrace();
 		}
