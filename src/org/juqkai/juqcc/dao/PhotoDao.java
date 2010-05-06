@@ -17,31 +17,43 @@ public class PhotoDao {
         return _instance;
     }
  
-    //
+    /**
+     * 添加图片
+     */
     public Long insertPhoto(Photo photo) {
     	pm.makePersistent(photo);
         return photo.getId();
     }
+    
+    /**
+     * 删除图片
+     * @param photo
+     */
     public void deletePhoto(Photo photo){
-    	pm.deletePersistent(pm.getObjectById(Photo.class, photo.getId()));
+    	pm.deletePersistent(findById(photo));
     }
     
     public List<Photo> listAll(){
     	return (List<Photo>) pm.newQuery(Photo.class).execute();
     }
  
-    public Photo getById(Long id) {
+    /**
+     * 根据ID进行查询
+     * @param photo
+     * @return
+     */
+    public Photo findById(Photo photo) {
         Query query = pm.newQuery(Photo.class);
         query.setFilter("id == idParam");
         query.declareParameters("Long idParam");
         
-        List<Photo> photo = null;
+        List<Photo> ph = null;
         try {
-            photo = (List<Photo>) query.execute(id);
-            if (photo.isEmpty()){
+            ph = (List<Photo>) query.execute(photo.getId());
+            if (ph.isEmpty()){
                 return null;
             }
-            return photo.get(0);
+            return ph.get(0);
            
         } finally {
             query.closeAll();
@@ -51,12 +63,13 @@ public class PhotoDao {
 	public List<Photo> listAll(Page page) {
 		listAllCount(page);
 		Query query = pm.newQuery(Photo.class);
+		query.setOrdering("id desc");
 		query.setRange(page.getPageStart(), page.getPageEnd());
 		return (List<Photo>) query.execute();
 	}
 	
 	private  void listAllCount(Page page){
-		Query query = pm.newQuery("select count(1) from " + Photo.class.getName());
+		Query query = pm.newQuery("select count(1) from " + Photo.class.getName() );
 		page.setItemCount(Long.parseLong(query.execute().toString()));
 	}
     @Override

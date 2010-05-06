@@ -43,7 +43,6 @@ public class PhotoUtil {
 			}
 			return false;
 		}
-		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		return true;
 	}
 }

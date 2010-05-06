@@ -12,8 +12,6 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.io.IOUtils;
 import org.juqkai.juqcc.dao.PhotoDao;
 import org.juqkai.juqcc.domain.Photo;
-import org.juqkai.juqcc.util.PhotoUtil;
-
 import com.google.appengine.api.datastore.Blob;
 
 @SuppressWarnings("serial")

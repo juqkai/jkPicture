@@ -15,8 +15,8 @@ public class JuqccListServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
 		Long pa = 1l;
-		if(req.getParameter("page") != null){
-			pa = Long.parseLong(req.getParameter("page"));
+		if(req.getParameter("pg") != null){
+			pa = Long.parseLong(req.getParameter("pg"));
 		}
 		Page page = new Page();
 		page.setCurrentPage(pa);

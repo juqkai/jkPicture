@@ -17,8 +17,10 @@ public class JuqccOneServlet extends HttpServlet {
 		PhotoDao pdao = PhotoDao.getInstance();
 		
 		Long id = Long.parseLong(req.getParameter("id"));
+		Photo ph = new Photo();
+		ph.setId(id);
 		
-		Photo photo = pdao.getById(id);
+		Photo photo = pdao.findById(ph);
 		resp.setContentType("image/jpeg;charset=utf-8");
 		resp.getOutputStream().write(photo.getPhoto().getBytes());
 		resp.getOutputStream().close();

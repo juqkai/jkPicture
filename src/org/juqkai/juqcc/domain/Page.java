@@ -1,7 +1,7 @@
 package org.juqkai.juqcc.domain;
 
 public class Page {
-	public static Long PAGE_SIZE = 15l;
+	public static Long PAGE_SIZE = 30l;
 	/**
 	 * 当前页
 	 */
