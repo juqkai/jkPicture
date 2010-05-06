@@ -12,6 +12,7 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.io.IOUtils;
 import org.juqkai.juqcc.dao.PhotoDao;
 import org.juqkai.juqcc.domain.Photo;
+import org.juqkai.juqcc.util.PhotoUtil;
 
 import com.google.appengine.api.datastore.Blob;
 
@@ -20,9 +21,9 @@ public class JuqccUploadServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
 		try {
+			PhotoUtil.login(req, resp);
+			
 			uploadPhoto(req);
-			// req.setAttribute("Pid", uploadPhoto(new
-			// ServletFileUpload().getItemIterator(req)));
 			req.getRequestDispatcher("photo.jsp").forward(req, resp);
 		} catch (ServletException e) {
 			e.printStackTrace();
@@ -30,7 +31,13 @@ public class JuqccUploadServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
-
+	
+	/**
+	 * 保存图片信息
+	 * @param req
+	 * @throws FileUploadException
+	 * @throws IOException
+	 */
 	private void uploadPhoto(HttpServletRequest req) throws FileUploadException, IOException {
 		FileItemIterator iterator = new ServletFileUpload().getItemIterator(req);
 		while (iterator.hasNext()) {

@@ -8,11 +8,14 @@ import javax.servlet.http.HttpServletResponse;
 import org.juqkai.juqcc.dao.PhotoDao;
 import org.juqkai.juqcc.domain.Page;
 import org.juqkai.juqcc.domain.Photo;
+import org.juqkai.juqcc.util.PhotoUtil;
 
 @SuppressWarnings("serial")
 public class JuqccDeleteServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
+		PhotoUtil.login(req, resp);
+		
 		Long pa = 1l;
 		if (req.getParameter("page") != null) {
 			pa = Long.parseLong(req.getParameter("page"));
@@ -26,9 +29,6 @@ public class JuqccDeleteServlet extends HttpServlet {
 		Photo photo = new Photo();
 		photo.setId(id);
 		pdao.deletePhoto(photo);
-		
-		
-		
 		try {
 			req.getRequestDispatcher("/juqccList").forward(req, resp);
 		} catch (ServletException e) {
