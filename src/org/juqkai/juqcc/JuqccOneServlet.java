@@ -20,6 +20,7 @@ public class JuqccOneServlet extends HttpServlet {
 		Photo ph = new Photo();
 		ph.setId(id);
 		
+		resp.setCharacterEncoding("utf-8");
 		Photo photo = pdao.findById(ph);
 		resp.setContentType("image/jpeg;charset=utf-8");
 		resp.getOutputStream().write(photo.getPhoto().getBytes());
