@@ -1,17 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry excluding="**/.svn/**" kind="src" path="src"/>
+	<classpathentry kind="src" path="blog"/>
+	<classpathentry kind="src" path="config"/>
 	<classpathentry kind="con" path="com.google.appengine.eclipse.core.GAE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/alanX/AlanX1.0.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/apache/commons-fileupload-1.2.1.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/apache/commons-io-1.3.2.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/appengine-api-1.0-sdk-1.3.3.1.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/appengine-api-labs-1.3.3.1.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/appengine-jsr107cache-1.3.3.1.jar"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/commons-fileupload-1.2.1.jar"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/commons-io-1.3.2.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/geronimo-jpa_3.0_spec-1.1.1.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/geronimo-jta_1.1_spec-1.1.1.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/jdo2-api-2.3-eb.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/jsr107cache-1.1.jar"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/AlanX1.0.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/spring/spring-aop.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/spring/spring-beans.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/spring/spring-context-support.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/spring/spring-context.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/spring/spring-core.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/spring/spring-web.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/spring/spring-webmvc-portlet.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/spring/spring-webmvc.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/spring/spring.jar"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>
