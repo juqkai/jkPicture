@@ -12,7 +12,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	</listener>
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/classes/spring/juqccBlog-servlet.xml</param-value>
+		<param-value>classpath*:config/spring/*.xml</param-value>
 	</context-param>
 	
 	
