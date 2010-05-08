@@ -29,5 +29,43 @@ public class Article{
 	@Persistent
 	private String classification;
 	@Persistent
-	private List<Reply> replys; 
+	private List<Reply> replys;
+	
+	
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Text getContent() {
+		return content;
+	}
+	public void setContent(Text content) {
+		this.content = content;
+	}
+	public Date getCreateDate() {
+		return createDate;
+	}
+	public void setCreateDate(Date createDate) {
+		this.createDate = createDate;
+	}
+	public String getClassification() {
+		return classification;
+	}
+	public void setClassification(String classification) {
+		this.classification = classification;
+	}
+	public List<Reply> getReplys() {
+		return replys;
+	}
+	public void setReplys(List<Reply> replys) {
+		this.replys = replys;
+	} 
 }
