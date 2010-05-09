@@ -5,10 +5,16 @@ import java.util.List;
 import org.juqkai.juqcc.blog.domain.Article;
 import org.juqkai.juqcc.blog.service.ArticleService;
 import org.juqkai.juqcc.domain.Page;
+import org.nutz.mvc.adaptor.PairAdaptor;
+import org.nutz.mvc.annotation.AdaptBy;
+import org.nutz.mvc.annotation.At;
 
+@At("/article")
+@AdaptBy(type = PairAdaptor.class)
 public class ArticleServlet{
 	private ArticleService articleService;
 	
+	@At
 	public void save(Article article){
 		
 		System.out.println(article);

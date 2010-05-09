@@ -10,7 +10,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
         <servlet-class>org.nutz.mvc.NutServlet</servlet-class>
         <init-param>
 			<param-name>modules</param-name>
-			<param-value>nutz.demo.mvc.MainModule</param-value>
+			<param-value>org.juqkai.jucc.blog.nutz.MainModule</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
 	</servlet>
@@ -25,7 +25,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
         
 	
 	
-<!-- ------------------------------upload-------------------------- -->
+<!--                        upload                          -->
 	<servlet>
 		<servlet-name>juqccList</servlet-name>
 		<servlet-class>org.juqkai.juqcc.JuqccListServlet</servlet-class>
