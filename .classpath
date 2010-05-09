@@ -2,6 +2,7 @@
 <classpath>
 	<classpathentry excluding="**/.svn/**" kind="src" path="upLoad"/>
 	<classpathentry kind="src" path="blog"/>
+	<classpathentry kind="src" path="Global"/>
 	<classpathentry kind="con" path="com.google.appengine.eclipse.core.GAE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/AlanX1.0.jar"/>
@@ -15,11 +16,6 @@
 	<classpathentry kind="lib" path="war/WEB-INF/lib/jdo2-api-2.3-eb.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/jsr107cache-1.1.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/commons-logging-1.1.1.jar"/>
-	<classpathentry kind="lib" path="/test/war/WEB-INF/lib/spring/spring-webmvc.jar"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/spring-beans.jar"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/spring-context.jar"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/spring-core.jar"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/spring-web.jar"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/spring-webmvc.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/nutz-1.a.27-jdk6.jar"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>
