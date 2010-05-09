@@ -5,6 +5,7 @@ import org.nutz.mvc.annotation.Ok;
 
 
 @Ok("json")
+@At("/test")
 public class testServlet {
 	
 	@At("/test")

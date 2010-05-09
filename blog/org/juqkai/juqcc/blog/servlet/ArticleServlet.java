@@ -10,7 +10,6 @@ import org.nutz.mvc.annotation.AdaptBy;
 import org.nutz.mvc.annotation.At;
 
 @At("/article")
-@AdaptBy(type = PairAdaptor.class)
 public class ArticleServlet{
 	private ArticleService articleService;
 	
@@ -18,17 +17,10 @@ public class ArticleServlet{
 	public void save(Article article){
 		
 		System.out.println(article);
-		System.out.println(article.getName());
-		System.out.println(article.getContent());
-		System.out.println(article.getId());
-		
-		
-//		articleService.save(article);
-//		
-//		ModelAndView mav = new ModelAndView();
-//		mav.setViewName("article/list");
-////		list(1l);
-//		return mav;
+//		System.out.println(article);
+//		System.out.println(article.getName());
+//		System.out.println(article.getContent());
+//		System.out.println(article.getId());
 	}
 	
 	public void list(Long currentPage){

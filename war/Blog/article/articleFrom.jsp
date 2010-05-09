@@ -11,7 +11,7 @@
 <table>
 	<tr>
 		<td>名称：</td>
-		<td><input type="text" name="article.name" /></td>
+		<td><input type="text" name="name" /></td>
 	</tr>
 	<tr>
 		<td>标签：</td>

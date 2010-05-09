@@ -55,9 +55,8 @@ public class PhotoDao {
         query.setFilter("id == idParam");
         query.declareParameters("Long idParam");
         
-        List<Photo> ph = null;
         try {
-            ph = (List<Photo>) query.execute(photo.getId());
+        	List<Photo> ph = (List<Photo>) query.execute(photo.getId());
             if (ph.isEmpty()){
                 return null;
             }
